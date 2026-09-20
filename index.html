@@ -11,6 +11,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -151,10 +155,73 @@
           </div>
         </div>
       </section>
+
+      <section>
+        <div class="wrapper p-top">
+          <div class="text-center">
+            <h5>Our Menu</h5>
+            <h2>The Most Popular</h2>
+          </div>
+
+          <div class="card-list text-center flex mt-4 gap-2">
+            <!-- <div class="order-card">
+              <div class="card-image">
+                <img src="images/burger.png" alt="img" />
+              </div>
+              <h4>Double Beef Burger</h4>
+              <h4 class="price">$200</h4>
+              <a href="#" class="btn">Add to Cart</a>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper p-top flex gap-3">
+          <div class="image-container">
+            <img src="images/delivery-boy-with-phone.png" alt="img" />
+          </div>
+
+          <div class="content">
+            <h5>Our reviews</h5>
+            <h2>What they say?</h2>
+            <div class="review-container">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="flex gap-2">
+                      <div class="profile">
+                        <img src="images/profile1.jpeg" alt="img" />
+                      </div>
+                      <div>
+                        <h4>Guy Hawkins</h4>
+                        <div class="mt-half">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      Foodie is the best. Besides the many delicious meals, the
+                      service is also very good, especially very fast delivery.
+                      I highly recommend Foodie to you.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- FOOTER PART -->
     <footer></footer>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
