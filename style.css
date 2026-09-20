@@ -71,6 +71,10 @@ img{
     text-align: center;
 }
 
+.mt-4{
+    margin-top: 4rem;
+}
+
 
 /* HEADER STYLING */
 
@@ -129,6 +133,8 @@ img{
 
 
 /* SECTIONS STYLING */
+
+/* HERO STYLING */
 
 .hero-section{
     min-height: calc(100vh - 14vh);
@@ -257,6 +263,8 @@ h3{
 
     /* SECTIONS STYLING */
 
+    /* HERO STYLING */
+
     h1{
         font-size: 3.6rem;
     }
@@ -271,6 +279,12 @@ h3{
 
     .gap-4{
         gap: 4rem;
+    }
+
+    /* SECTION 01 */
+
+    h2{
+        font-size: 3rem;
     }
 }
 
