@@ -72,6 +72,28 @@ img{
 }
 
 
+/* SECTION 01 */
+
+h5{
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: var(--gold-finger);
+    text-transform: uppercase;
+}
+
+h2{
+    font-size: 3.7rem;
+    text-transform: 3.7rem;
+    color: var(--lead);
+}
+
+h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--lead);
+}
+
+
 /* HEADER STYLING */
 
 .navbar{
@@ -177,6 +199,7 @@ p{
     background: var(--lead);
     color: var(--pure-white);
 }
+
 
 
 /* FOOTER STYLING */
