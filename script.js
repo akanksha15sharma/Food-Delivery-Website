@@ -22,6 +22,15 @@ closeBtn.addEventListener("click", () =>
 let productList = [];
 let cartproduct = [];
 
+const updateTotals = () => {
+  let totalPrice = 0;
+
+  document.querySelectorAll('.item').forEach(item => {
+
+    const price = 
+  })
+}
+
 const showCards = () => {
   productList.forEach(product => {
     const orderCard = document.createElement("div");
@@ -56,6 +65,9 @@ const addToCart = (product) => {
 
   cartproduct.push(product);
 
+  let quantity = 1;
+  let price = parseFloat(product.price.replace('$', ''));
+
   const cartItem = document.createElement("div");
   cartItem.classList.add("item");
 
@@ -71,7 +83,7 @@ const addToCart = (product) => {
         <a href="#" class="quantity-btn minus">
           <i class="fa-solid fa-minus"></i>
         </a>
-        <h4 class="quantity-value">1</h4>
+        <h4 class="quantity-value">${quantity}</h4>
         <a href="#" class="quantity-btn plus">
            <i class="fa-solid fa-plus"></i>
         </a>
@@ -80,8 +92,33 @@ const addToCart = (product) => {
   cartList.appendChild(cartItem);
 
   const plusBtn = cartItem.querySelector('.plus');
-  plusBtn.addEventListener('click', () => {
+  const quantityValue = cartItem.querySelector('.quantity-value');
+  const itemTotal = cartItem.querySelector('.item-total');
+  const minusBtn = cartItem.querySelector('.minus');
 
+  plusBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    quantity++;
+    quantityValue.textContent = quantity;
+    itemTotal.textContent = `${(price * quantity).toFixed(2)}`;
+  });
+
+  minusBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (quantity > 1) {
+      quantity--;
+      quantityValue.textContent = quantity;
+      itemTotal.textContent = `${(price * quantity).toFixed(2)}`;
+    }
+    else {
+      cartItem.classList.add('slide-out')
+
+      setTimeout(() => {
+        cartItem.remove();
+        cartproduct = cartproduct.filter(item => item.id !== product.id);
+      }, 300)
+    }
   })
 }
 

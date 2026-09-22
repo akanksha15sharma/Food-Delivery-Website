@@ -315,6 +315,11 @@ h4 {
     align-items: center;
     gap: 1rem;
     padding: .7rem 1rem;
+    transition: all .5s ease-in-out;
+}
+
+.item.slide-out {
+    transform: translate(50%);
 }
 
 .item .detail {
@@ -354,6 +359,7 @@ h4 {
     font-style: 400;
     margin-inline: .6rem;
 }
+
 
 /* SECTION 03 */
 
