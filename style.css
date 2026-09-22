@@ -317,7 +317,11 @@ h4 {
     padding: .7rem 1rem;
 }
 
-.cart-list .item:nth-child(even) {
+.item .detail {
+    flex: 2;
+}
+
+.cart-list .item:nth-child(odd) {
     background: var(--eye-ball);
 }
 
