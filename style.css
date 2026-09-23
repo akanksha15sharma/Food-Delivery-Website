@@ -99,6 +99,10 @@ img {
     color: var(--gold-finger);
 }
 
+.navlist li a:hover {
+    color: var(--gold-finger);
+}
+
 .btn {
     display: inline-block;
     padding: 0.9rem 2rem;

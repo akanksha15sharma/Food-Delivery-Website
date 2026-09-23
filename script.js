@@ -24,9 +24,11 @@ closeBtn.addEventListener("click", () =>
   cartTab.classList.remove("cart-tab-active"),
 );
 hamburger.addEventListener('click', () =>
-  mobileMenu.classList.toggle('.mobile-menu-active'));
+  mobileMenu.classList.toggle('mobile-menu-active')
+);
 hamburger.addEventListener('click', () =>
-  bars.classList.toggle('.fa-xmark'));
+  bars.classList.toggle('fa-xmark')
+);
 
 let productList = [];
 let cartproduct = [];
@@ -38,7 +40,7 @@ const updateTotals = () => {
 
   document.querySelectorAll('.item').forEach(item => {
 
-    const quantity = parseInt(item.querySelector('.quantity-value')).textContent;
+    const quantity = parseInt(item.querySelector('.quantity-value').textContent);
     const price = parseFloat(item.querySelector('.item-total').textContent.replace('$', ''));
 
     totalPrice += price;
