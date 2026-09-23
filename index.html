@@ -40,6 +40,9 @@
           <li>
             <a href="#contact">Contact</a>
           </li>
+          <li>
+            <a href="./order.html">My Orders</a>
+          </li>
         </ul>
 
         <div class="desktop-action flex gap-2">
@@ -76,6 +79,9 @@
             <a href="#contact">Contact</a>
           </li>
           <li>
+            <a href="./order.html">My Orders</a>
+          </li>
+          <li>
             <a href="signin.html" class="btn">
               Sign in &nbsp;
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -99,7 +105,7 @@
               food with fast delivery.
             </p>
             <div class="flex gap-2">
-              <a href="#" class="btn">Order now</a>
+              <a href="#menu" class="btn">Order now</a>
               <a href="#" class="social-icon">
                 <i class="fa-brands fa-x-twitter"></i>
               </a>
@@ -316,6 +322,23 @@
         </div>
       </section>
 
+      <!-- ORDER CONFIRMATION -->
+      <section class="order-confirmation" id="orderConfirmation">
+        <div class="confirmation-box">
+          <i class="fa-solid fa-circle-check"></i>
+
+          <h2>Order Placed Successfully!</h2>
+
+          <p>Thank you for ordering from Foodie.</p>
+
+          <h4>Order ID: <span id="orderId"></span></h4>
+
+          <div id="confirmationDetails"></div>
+
+          <a href="#menu" class="btn continue-btn"> Continue Shopping </a>
+        </div>
+      </section>
+
       <section id="about">
         <div class="wrapper p-top flex gap-3">
           <div class="image-container">
@@ -423,7 +446,10 @@
                 Discover food wherever and whenever<br />
                 and get your food delivery quickly.
               </p>
-              <a href="#" class="btn">Get the App</a>
+              <a href="#" class="btn" id="getAppBtn">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                Get the App
+              </a>
             </div>
           </div>
         </div>
@@ -442,12 +468,11 @@
             <label class="input-container flex">
               <input
                 type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email address"
-                autocomplete="off"
+                id="subscribeEmail"
+                placeholder="Enter your email"
               />
-              <a href="#" class="btn">Subscribe</a>
+
+              <a href="#" class="btn" id="subscribeBtn"> Subscribe </a>
             </label>
           </div>
         </div>
