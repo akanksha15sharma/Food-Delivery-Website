@@ -91,6 +91,7 @@ if (closeCheckout && checkoutTab) {
 }
 
 // PLACE ORDER
+// PLACE ORDER
 if (checkoutForm) {
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -98,17 +99,85 @@ if (checkoutForm) {
     const name = document.querySelector("#checkoutName").value.trim();
     const phone = document.querySelector("#checkoutPhone").value.trim();
     const address = document.querySelector("#checkoutAddress").value.trim();
-    const payment = document.querySelector("#paymentMethod").value;
+    const payment = paymentMethod.value;
 
     if (!name || !phone || !address || !payment) {
       alert("Please fill all the details.");
       return;
     }
 
+    // UPI validation
+    if (payment === "upi") {
+      const upiId = document.querySelector("#upiId").value.trim();
+
+      if (!upiId.includes("@")) {
+        alert("Please enter a valid UPI ID.");
+        return;
+      }
+    }
+
+    // Card validation
+    if (payment === "card") {
+      const cardNumber =
+        document.querySelector("#cardNumber").value.trim();
+
+      const cardName =
+        document.querySelector("#cardName").value.trim();
+
+      const expiry =
+        document.querySelector("#expiry").value.trim();
+
+      const cvv =
+        document.querySelector("#cvv").value.trim();
+
+      if (!cardNumber || !cardName || !expiry || !cvv) {
+        alert("Please fill all card details.");
+        return;
+      }
+
+      if (cardNumber.replace(/\s/g, "").length !== 16) {
+        alert("Card number must contain 16 digits.");
+        return;
+      }
+
+      if (cvv.length !== 3) {
+        alert("CVV must contain 3 digits.");
+        return;
+      }
+    }
+
     alert("Order placed successfully!");
 
     checkoutForm.reset();
+
+    upiDetails.classList.remove("active");
+    cardDetails.classList.remove("active");
+
     checkoutTab.classList.remove("checkout-tab-active");
+  });
+}
+
+// ====================
+// PAYMENT METHOD
+// ====================
+
+const paymentMethod = document.querySelector("#paymentMethod");
+const upiDetails = document.querySelector("#upiDetails");
+const cardDetails = document.querySelector("#cardDetails");
+
+if (paymentMethod) {
+  paymentMethod.addEventListener("change", () => {
+
+    upiDetails.classList.remove("active");
+    cardDetails.classList.remove("active");
+
+    if (paymentMethod.value === "upi") {
+      upiDetails.classList.add("active");
+    }
+
+    if (paymentMethod.value === "card") {
+      cardDetails.classList.add("active");
+    }
   });
 }
 
