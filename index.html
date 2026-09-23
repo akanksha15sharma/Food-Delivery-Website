@@ -200,13 +200,71 @@
                 </div>
               </div> -->
             </div>
+            <!-- CHECKOUT TAB -->
+            <div class="checkout-tab">
+              <div class="checkout-box">
+                <a href="#" class="close-checkout">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+
+                <h3>Checkout</h3>
+
+                <form id="checkoutForm">
+                  <div class="checkout-group">
+                    <label for="checkoutName">Full Name</label>
+                    <input
+                      type="text"
+                      id="checkoutName"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+
+                  <div class="checkout-group">
+                    <label for="checkoutPhone">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="checkoutPhone"
+                      placeholder="Enter phone number"
+                      required
+                    />
+                  </div>
+
+                  <div class="checkout-group">
+                    <label for="checkoutAddress">Delivery Address</label>
+                    <textarea
+                      id="checkoutAddress"
+                      placeholder="Enter your address"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="checkout-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select id="paymentMethod" required>
+                      <option value="">Select payment method</option>
+                      <option value="Cash on Delivery">Cash on Delivery</option>
+                      <option value="UPI">UPI</option>
+                      <option value="Card">Card</option>
+                    </select>
+                  </div>
+
+                  <div class="checkout-summary">
+                    <h4>Total:</h4>
+                    <h4 class="checkout-total">$0.00</h4>
+                  </div>
+
+                  <button type="submit" class="btn">Place Order</button>
+                </form>
+              </div>
+            </div>
             <div class="total-container">
               <h4>Total:</h4>
               <h4 class="cart-total">$0.00</h4>
             </div>
             <div class="btn-container flex gap-2">
               <a href="#" class="btn close-btn">Close</a>
-              <a href="#" class="btn">Check out</a>
+              <a href="#" class="btn checkout-btn">Check out</a>
             </div>
           </div>
         </div>

@@ -56,6 +56,63 @@ if (closeBtn && cartTab) {
 
 
 // ====================
+// CHECKOUT
+// ====================
+
+const checkoutBtn = document.querySelector(".checkout-btn");
+const checkoutTab = document.querySelector(".checkout-tab");
+const closeCheckout = document.querySelector(".close-checkout");
+const checkoutForm = document.querySelector("#checkoutForm");
+const checkoutTotal = document.querySelector(".checkout-total");
+
+// OPEN CHECKOUT
+if (checkoutBtn && checkoutTab) {
+  checkoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (cartproduct.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    checkoutTotal.textContent = cartTotal.textContent;
+
+    checkoutTab.classList.add("checkout-tab-active");
+  });
+}
+
+// CLOSE CHECKOUT
+if (closeCheckout && checkoutTab) {
+  closeCheckout.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    checkoutTab.classList.remove("checkout-tab-active");
+  });
+}
+
+// PLACE ORDER
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector("#checkoutName").value.trim();
+    const phone = document.querySelector("#checkoutPhone").value.trim();
+    const address = document.querySelector("#checkoutAddress").value.trim();
+    const payment = document.querySelector("#paymentMethod").value;
+
+    if (!name || !phone || !address || !payment) {
+      alert("Please fill all the details.");
+      return;
+    }
+
+    alert("Order placed successfully!");
+
+    checkoutForm.reset();
+    checkoutTab.classList.remove("checkout-tab-active");
+  });
+}
+
+// ====================
 // HAMBURGER MENU
 // ====================
 
