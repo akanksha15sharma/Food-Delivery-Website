@@ -285,6 +285,25 @@ h4 {
     inset: 0 0 0 auto;
 }
 
+.menu-controls {
+    width: 400px;
+    max-width: 100%;
+    margin: 2rem auto 0;
+}
+
+.menu-controls input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+.menu-controls input:focus {
+    border-color: var(--gold-finger);
+}
+
 .cart-list {
     flex: 1;
     width: 100%;

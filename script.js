@@ -21,6 +21,7 @@ const cartIcon = document.querySelector(".cart-icon");
 const cartTab = document.querySelector(".cart-tab");
 const closeBtn = document.querySelector(".close-btn");
 
+const searchInput = document.querySelector("#searchInput");
 const cardList = document.querySelector(".card-list");
 const cartList = document.querySelector(".cart-list");
 const cartTotal = document.querySelector(".cart-total");
@@ -283,20 +284,21 @@ const updateTotals = () => {
 // SHOW PRODUCT CARDS
 // ====================
 
-const showCards = () => {
+const showCards = (products = productList) => {
 
   if (!cardList) return;
 
-  productList.forEach((product) => {
+  cardList.innerHTML = "";
 
-    const orderCard =
-      document.createElement("div");
+  products.forEach((product) => {
+
+    const orderCard = document.createElement("div");
 
     orderCard.classList.add("order-card");
 
     orderCard.innerHTML = `
       <div class="card-image">
-        <img src="${product.image}" alt="${product.name}" />
+        <img src="${product.image}" alt="${product.name}">
       </div>
 
       <h4>${product.name}</h4>
@@ -308,13 +310,10 @@ const showCards = () => {
       </a>
     `;
 
-
     cardList.appendChild(orderCard);
-
 
     const cardBtn =
       orderCard.querySelector(".card-btn");
-
 
     cardBtn.addEventListener("click", (e) => {
 
@@ -327,6 +326,24 @@ const showCards = () => {
   });
 
 };
+
+if (searchInput) {
+
+  searchInput.addEventListener("input", () => {
+
+    const searchText =
+      searchInput.value.toLowerCase().trim();
+
+    const filteredProducts =
+      productList.filter((product) =>
+        product.name.toLowerCase().includes(searchText)
+      );
+
+    showCards(filteredProducts);
+
+  });
+
+}
 
 
 // ====================
