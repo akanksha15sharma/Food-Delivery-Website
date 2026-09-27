@@ -47,4 +47,10 @@
         "price": "$9.31",
         "image": "images/spring-roll.png"
     }
+    {
+        "id": 9,
+        "name": "Samosa",
+        "price": "$8.31",
+        "image": "images/spring-roll.png"
+    }
 ]
